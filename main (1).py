@@ -1,37 +1,56 @@
-labyrinth = [['x', 'x', 'x', 'x', 'x', 'x'],
-             ['x', ' ', ' ', ' ', 'S', 'x'],
-             ['x', ' ', 'x', 'x', ' ', 'x'],
-             ['x', ' ', 'x', 'x', ' ', 'x'],
-             ['x', ' ', 'x', 'x', ' ', 'x'],
-             ['x', ' ', 'x', ' ', ' ', 'x'],
-             ['x', ' ', 'x', ' ', 'x', 'x'],
-             ['x', ' ', ' ', 'E', ' ', 'x'],
-             ['x', 'x', 'x', 'x', 'x', 'x']]
-row = 0
-while row< len(labyrinth):
-    colum = 0
-    while colum<len(labyrinth[0]):
-        if labyrinth[row][colum] == 'E' :
-            entrancex=colum
+#Laberynth Proyect
+#Find "E"
+Maze=  [['x', 'x', 'x', 'x', 'x', 'x'],
+        ['x', ' ', ' ', ' ', 'S', 'x'],
+        ['x', ' ', 'x', 'x', ' ', 'x'],
+        ['x', ' ', 'x', 'x', ' ', 'x'],
+        ['x', ' ', 'x', 'x', ' ', 'x'],
+        ['x', ' ', 'x', ' ', ' ', 'x'],
+        ['x', ' ', 'x', ' ', 'x', 'x'],
+        ['x', ' ', ' ', 'E', ' ', 'x'],
+        ['x', 'x', 'x', 'x', 'x', 'x']]
+
+row=0
+while row < len(Maze):
+    column=0
+    while column<len(Maze[0]):
+        if Maze[row][column] == "E":
+            entrancex=column
             entrancey=row
-        colum+=1
-    row+=1
-print(entrancey)
-print(entrancex)
+        column+=1
+    row+=1 
+print (entrancey)
+print (entrancex)
 
+#Move through the blanks
+Repeat
+if entrancex-1==" ":
+   numberofpaths>=1
+if entrancey+1==" ":
+    numberofpaths>=1
+if entrancex+1==" ":
+   numberofpaths>=1
+if entrancey-1==" ":
+   numberofpaths>=1
+print numberofpaths
 
-
-if labyrinth[currentpositiony][currentpositionx-1]= ' ' :
-    entrancex-1
-    print(entrancex-1 )
+if numberofpaths>1:
+    Checkpoint
+    currentposition= entrancex, entrancey
     
-if  labyrinth[currentpositiony][currentpositionx+1]= ' ' :
+if numberofpaths<2:
     entrancex+1
-    print(entancex+1)
-if labyrinth[currentpositiony-1][currentpositionx]= ' ' :
-    entrancey-1
-    print(entrancey-1)
-if labyrinth[currentpositiony+1][currentpositionx]= ' ' :
     entrancey+1
-    print(entrancey)
+    movecount+1
+
+if entrancex-1=="S":
+    print movecount
+if entrancey+1=="S":
+    print movecount
+if entrancex+1=="S":
+    print movecount
+if entrancey-1=="S":
+    print movecount
+
+
 
